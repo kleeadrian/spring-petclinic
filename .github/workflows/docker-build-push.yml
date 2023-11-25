@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: https://dadjokes.jfrog.io/pet-clinic:${{github.sha}}
+          tags: dadjokes/pet-clinic:${{github.sha}}
