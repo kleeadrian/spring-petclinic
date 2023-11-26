@@ -10,7 +10,7 @@ on:
 
 env:
   JF_URL: ${{ vars.JF_URL }}
-  JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+  JF_ACCESS_TOKEN: ${{ secrets.JFROG_TOKEN }}
   IMAGE_NAME: dadjokes.jfrog.io/petclinic-docker/petclinic-docker-image:latest
 
 jobs:
@@ -45,9 +45,7 @@ jobs:
           
       - name: Publish Build info With JFrog CLI
         env:
-          # Generated and maintained by GitHub
           JFROG_CLI_BUILD_NAME: jfrog-docker-petclinic
-          # JFrog organization secret
           JFROG_CLI_BUILD_NUMBER : ${{ github.sha }}
         run: |
           # Export the build name and build nuber
