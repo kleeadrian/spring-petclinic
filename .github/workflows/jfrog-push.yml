@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  JF_URL: ${{ vars.JF_URL }}
+  JF_URL: dadjokes.jfrog.io
   JF_ACCESS_TOKEN: ${{ secrets.JFROG_TOKEN }}
   IMAGE_NAME: dadjokes.jfrog.io/petclinic-docker/petclinic-docker-image:latest
 
