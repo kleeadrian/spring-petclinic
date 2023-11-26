@@ -18,13 +18,12 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.JFROG_USERNAME }}
-          password: ${{ secrets.JFROG_TOKEN }}
-          registry: https://dadjokes.jfrog.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: dadjokes/pet-clinic:${{github.sha}}
+          tags: ${{ secrets.DOCKER_USERNAME }}/pet-clinic:latest
